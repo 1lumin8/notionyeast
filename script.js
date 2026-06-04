@@ -20,11 +20,6 @@ const quotes = [
     text: "우리는 하나님의 나라를 되찾기 위한 하나님의 특수 독립군 백마부대입니다. 하나님의 약속인 계시록 완성을 위해서, 하나님의 통치를 위해서, 하나님의 뜻과 목적을 위해서, 하나님의 영광을 위해서, 목숨 걸고 일하는 천군들을 위해서 나는 쉬지 않고 기도하고 있고, 여러분이 있는 곳에 나도 있으며 주님도 있습니다."
   },
   {
-    category: "JSS",
-    source: "How to read JSS",
-    text: "When you read JSS, must read heart of PP. When you read it, you need to meditate why. Why did PP give us this title today? What is God trying to tell us, what is Jesus trying to tell us?"
-  },
-  {
     category: "Salvation",
     source: "Salvation",
     text: "말씀을 깨달아 천국에 들어온 자들이 차면, 천국 문이 닫히게 될 것이다. 문이 닫힌 후에는 들어오고자 해도 들어올 수 없다. 말세에 구원받기를 원하는 자는 분발해야 할 것이다. 택함을 받는 일이 항시 있는 것이 아님을 알 것이다."
