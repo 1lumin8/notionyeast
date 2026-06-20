@@ -2329,6 +2329,16 @@ function baseSourceId(quote) {
   return quote.source.replace(/ \/ excerpt .+$/, "");
 }
 
+function bibleReference(quote) {
+  const match = baseSourceId(quote).match(/^Bible \(A\) \/ (.+)$/);
+  return match ? match[1].trim() : "";
+}
+
+function quoteTextWithReference(quote) {
+  const reference = bibleReference(quote);
+  return reference ? `${quote.text} ${reference}` : quote.text;
+}
+
 function getShownQuoteIds(storageKey) {
   try {
     return JSON.parse(localStorage.getItem(storageKey)) || [];
@@ -2392,9 +2402,17 @@ function renderQuotes(selectedQuotes) {
   selectedQuotes.forEach((quote) => {
     const card = template.content.cloneNode(true);
     const saveButton = card.querySelector(".save-quote");
+    const blockquote = card.querySelector("blockquote");
+    const reference = bibleReference(quote);
     card.querySelector(".category").textContent = quote.category;
     card.querySelector(".source").textContent = quote.source;
-    card.querySelector("blockquote").textContent = quote.text;
+    blockquote.textContent = quote.text;
+    if (reference) {
+      const cite = document.createElement("cite");
+      cite.className = "bible-reference";
+      cite.textContent = reference;
+      blockquote.append(document.createElement("br"), cite);
+    }
     saveButton.textContent = isQuoteSaved(quote) ? "Saved" : "Save";
     saveButton.classList.toggle("saved", isQuoteSaved(quote));
     saveButton.setAttribute("aria-label", `${saveButton.textContent} quote`);
@@ -2438,7 +2456,7 @@ function renderSavedQuotes() {
     });
 
     const text = document.createElement("p");
-    text.textContent = quote.text;
+    text.textContent = quoteTextWithReference(quote);
 
     top.append(label, removeButton);
     item.append(top, text);
@@ -2562,7 +2580,7 @@ function renderSearchResults(query) {
     saveButton.addEventListener("click", () => toggleSavedQuote(quote, quote.collectionLabel));
 
     const text = document.createElement("p");
-    appendHighlightedText(text, quote.text, terms);
+    appendHighlightedText(text, quoteTextWithReference(quote), terms);
 
     top.append(label, saveButton);
     item.append(top, text);
@@ -2645,7 +2663,7 @@ function switchCollection(collectionKey) {
 async function copyIssue() {
   const selected = window.currentIssue || [];
   const text = selected
-    .map((quote, index) => `${index + 1}. [${quote.category}] ${quote.text}\nSource: ${quote.source}`)
+    .map((quote, index) => `${index + 1}. [${quote.category}] ${quoteTextWithReference(quote)}\nSource: ${quote.source}`)
     .join("\n\n");
 
   try {

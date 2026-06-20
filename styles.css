@@ -358,6 +358,12 @@ blockquote {
   word-break: keep-all;
 }
 
+.bible-reference {
+  color: inherit;
+  font-style: normal;
+  font-weight: inherit;
+}
+
 .quote-card:first-child blockquote {
   font-size: 1.05rem;
   line-height: 1.6;
