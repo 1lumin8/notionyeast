@@ -113,6 +113,7 @@ button {
 .tabs {
   width: fit-content;
   display: flex;
+  flex-wrap: wrap;
   gap: 6px;
   padding: 6px;
   border: 1px solid rgba(222, 216, 205, 0.72);
@@ -251,7 +252,7 @@ main {
 }
 
 .issue-header,
-.category-strip,
+.category-strip-header,
 .saved-header {
   display: flex;
   align-items: flex-start;
@@ -363,7 +364,38 @@ blockquote {
 }
 
 .category-strip {
-  padding: 22px 24px;
+  padding: 18px 20px;
+  display: grid;
+  gap: 16px;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.category-strip.is-collapsed {
+  background: rgba(255, 253, 249, 0.58);
+}
+
+.category-strip.is-collapsed .category-pills {
+  display: none;
+}
+
+.category-strip-header {
+  align-items: center;
+}
+
+.category-toggle {
+  border: 1px solid rgba(47, 97, 86, 0.18);
+  border-radius: 999px;
+  background: rgba(244, 239, 229, 0.76);
+  color: var(--accent-dark);
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-size: 0.84rem;
+  font-weight: 800;
+  padding: 9px 13px;
+}
+
+.category-toggle:hover {
+  background: rgba(235, 228, 216, 0.95);
 }
 
 .saved-header {
@@ -494,7 +526,7 @@ blockquote {
 
   .topbar,
   .issue-header,
-  .category-strip,
+  .category-strip-header,
   .saved-header {
     align-items: stretch;
     flex-direction: column;
@@ -517,7 +549,7 @@ blockquote {
   }
 
   .tabs button {
-    flex: 1;
+    flex: 1 1 150px;
     padding: 10px 8px;
   }
 

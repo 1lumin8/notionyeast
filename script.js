@@ -1235,20 +1235,1011 @@ const expandedHeavenlyYeastQuotes = heavenlyYeastQuotes.concat([
   }
 ]);
 
+const bibleQuotes = [
+  {
+    category: "Strength",
+    source: "Bible (A) / Prov 24:10",
+    text: "If you falter in times of trouble, how small is your strength!"
+  },
+  {
+    category: "Patience",
+    source: "Bible (A) / Ecc 7:8",
+    text: "The end of a matter is better than its beginning, and patience is better than pride."
+  },
+  {
+    category: "Peace",
+    source: "Bible (A) / Rom 16:20",
+    text: "The God of peace will soon crush Satan under your feet. The grace of our Lord Jesus be with you."
+  },
+  {
+    category: "Word",
+    source: "Bible (A) / Jn 6:63",
+    text: "The Spirit gives life; the flesh counts for nothing. The words I have spoken to you are spirit and they are life."
+  },
+  {
+    category: "Word",
+    source: "Bible (A) / Jn 17:8",
+    text: "For I gave them the words you gave me and they accepted them."
+  },
+  {
+    category: "Word",
+    source: "Bible (A) / Jn 17:14",
+    text: "I have given them your word and the world has hated them, for they are not of the world any more than I am of the world."
+  },
+  {
+    category: "Light",
+    source: "Bible (A) / Mt 5:14-16",
+    text: "You are the light of the world. A city on a hill cannot be hidden. In the same way, let your light shine before men."
+  },
+  {
+    category: "Salvation",
+    source: "Bible (A) / 2 Pt 3:15",
+    text: "Bear in mind that our Lord's patience means salvation."
+  },
+  {
+    category: "Scripture",
+    source: "Bible (A) / 2 Pt 3:16",
+    text: "His letters contain some things that are hard to understand, which ignorant and unstable people distort, as they do the other Scriptures."
+  },
+  {
+    category: "Faith",
+    source: "Bible (A) / 2 Pt 1:10-11",
+    text: "Be all the more eager to make your calling and election sure. For if you do these things, you will never fall."
+  },
+  {
+    category: "Hope",
+    source: "Bible (A) / 1 Pt 3:15-16",
+    text: "Always be prepared to give an answer to everyone who asks you to give the reason for the hope that you have."
+  },
+  {
+    category: "Gentleness",
+    source: "Bible (A) / 1 Pt 3:15",
+    text: "But do this with gentleness and respect."
+  },
+  {
+    category: "Faith",
+    source: "Bible (A) / Mt 13:58",
+    text: "And he did not do many miracles there because of their lack of faith."
+  },
+  {
+    category: "Faith",
+    source: "Bible (A) / Mt 14:31-33",
+    text: "You of little faith, why did you doubt? And when they climbed into the boat, the wind died down."
+  },
+  {
+    category: "Faith",
+    source: "Bible (A) / Jn 11:40",
+    text: "Did I not tell you that if you believed, you would see the glory of God?"
+  },
+  {
+    category: "Faith",
+    source: "Bible (A) / Heb 11:24-27",
+    text: "By faith Moses chose to be mistreated along with the people of God rather than to enjoy the pleasures of sin for a short time."
+  },
+  {
+    category: "Faith",
+    source: "Bible (A) / Heb 11:29-31",
+    text: "By faith the people passed through the Red Sea as on dry land. By faith the walls of Jericho fell."
+  },
+  {
+    category: "Faith",
+    source: "Bible (A) / Lk 18:42",
+    text: "Receive your sight; your faith has healed you."
+  },
+  {
+    category: "Protection",
+    source: "Bible (A) / 1 Pt 5:8",
+    text: "Be self-controlled and alert. Your enemy the devil prowls around like a roaring lion looking for someone to devour."
+  },
+  {
+    category: "Jesus",
+    source: "Bible (A) / Jn 10:9-10",
+    text: "I am the gate; whoever enters through me will be saved. The thief comes only to steal and kill and destroy; I have come that they may have life."
+  },
+  {
+    category: "Jesus",
+    source: "Bible (A) / Jn 10:11",
+    text: "I am the good shepherd. The good shepherd lays down his life for the sheep."
+  },
+  {
+    category: "Jesus",
+    source: "Bible (A) / Jn 10:14-15",
+    text: "I am the good shepherd; I know my sheep and my sheep know me, and I lay down my life for the sheep."
+  },
+  {
+    category: "Jesus",
+    source: "Bible (A) / Lk 2:34-35",
+    text: "This child is destined to cause the falling and rising of many in Israel, and to be a sign that will be spoken against."
+  },
+  {
+    category: "Jesus",
+    source: "Bible (A) / Jn 6:35-37",
+    text: "I am the bread of life. He who comes to me will never go hungry, and whoever comes to me I will never drive away."
+  },
+  {
+    category: "Jesus",
+    source: "Bible (A) / Jn 15:4",
+    text: "Remain in me, and I will remain in you. No branch can bear fruit by itself; it must remain in the vine."
+  },
+  {
+    category: "Covenant",
+    source: "Bible (A) / Rom 1:25",
+    text: "They exchanged the truth of God for a lie, and worshiped and served created things rather than the Creator."
+  },
+  {
+    category: "Covenant",
+    source: "Bible (A) / Rom 1:28",
+    text: "Since they did not think it worthwhile to retain the knowledge of God, he gave them over to a depraved mind."
+  },
+  {
+    category: "Covenant",
+    source: "Bible (A) / Rom 9:8-9",
+    text: "It is not the natural children who are God's children, but it is the children of the promise who are regarded as Abraham's offspring."
+  },
+  {
+    category: "Covenant",
+    source: "Bible (A) / Rom 9:11-12",
+    text: "In order that God's purpose in election might stand: not by works but by him who calls."
+  },
+  {
+    category: "Judgment",
+    source: "Bible (A) / Acts 17:30-31",
+    text: "In the past God overlooked such ignorance, but now he commands all people everywhere to repent. For he has set a day when he will judge the world with justice."
+  },
+  {
+    category: "Judgment",
+    source: "Bible (A) / Mt 25:40",
+    text: "Whatever you did for one of the least of these brothers of mine, you did for me."
+  },
+  {
+    category: "Judgment",
+    source: "Bible (A) / Mt 25:45-46",
+    text: "Whatever you did not do for one of the least of these, you did not do for me. Then they will go away to eternal punishment, but the righteous to eternal life."
+  },
+  {
+    category: "Repentance",
+    source: "Bible (A) / Acts 17:32-34",
+    text: "Some of them sneered, but others said, We want to hear you again on this subject. A few men became followers of Paul and believed."
+  },
+  {
+    category: "World",
+    source: "Bible (A) / 2 Cor 5:1-4",
+    text: "If the earthly tent we live in is destroyed, we have a building from God, an eternal house in heaven, not built by human hands."
+  },
+  {
+    category: "World",
+    source: "Bible (A) / 2 Cor 5:4",
+    text: "While we are in this tent, we groan and are burdened, so that what is mortal may be swallowed up by life."
+  },
+  {
+    category: "Word",
+    source: "Bible (A) / Rom 1:17",
+    text: "For in the gospel a righteousness from God is revealed, a righteousness that is by faith from first to last."
+  },
+  {
+    category: "Gospel",
+    source: "Bible (A) / Rom 16:25-26",
+    text: "Now to him who is able to establish you by my gospel and the proclamation of Jesus Christ, according to the revelation of the mystery hidden for long ages past."
+  },
+  {
+    category: "God",
+    source: "Bible (A) / Acts 17:24-27",
+    text: "The God who made the world and everything in it is the Lord of heaven and earth and does not live in temples built by hands."
+  },
+  {
+    category: "God",
+    source: "Bible (A) / Acts 17:27-28",
+    text: "God did this so that men would seek him and perhaps reach out for him and find him, though he is not far from each one of us."
+  },
+  {
+    category: "God",
+    source: "Bible (A) / Acts 17:28",
+    text: "For in him we live and move and have our being."
+  },
+  {
+    category: "God",
+    source: "Bible (A) / Jas 4:7-8",
+    text: "Submit yourselves, then, to God. Resist the devil, and he will flee from you. Come near to God and he will come near to you."
+  },
+  {
+    category: "God",
+    source: "Bible (A) / Dt 31:8",
+    text: "The LORD himself goes before you and will be with you; he will never leave you nor forsake you."
+  },
+  {
+    category: "Love",
+    source: "Bible (A) / Rom 8:35",
+    text: "Who shall separate us from the love of Christ? Shall trouble or hardship or persecution or famine or nakedness or danger or sword?"
+  },
+  {
+    category: "Love",
+    source: "Bible (A) / Rom 8:38-39",
+    text: "Neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, will be able to separate us from the love of God."
+  },
+  {
+    category: "Endurance",
+    source: "Bible (A) / 2 Tim 2:11-13",
+    text: "If we died with him, we will also live with him; if we endure, we will also reign with him."
+  },
+  {
+    category: "Suffering",
+    source: "Bible (A) / Rv 2:10",
+    text: "Do not be afraid of what you are about to suffer. Be faithful, even to the point of death, and I will give you the crown of life."
+  },
+  {
+    category: "Discipline",
+    source: "Bible (A) / 1 Tim 1:18-20",
+    text: "Hold on to faith and a good conscience. Some have rejected these and so have shipwrecked their faith."
+  },
+  {
+    category: "Church",
+    source: "Bible (A) / Mt 18:20",
+    text: "For where two or three come together in my name, there am I with them."
+  },
+  {
+    category: "Prayer",
+    source: "Bible (A) / Mt 18:19",
+    text: "If two of you on earth agree about anything you ask for, it will be done for you by my Father in heaven."
+  }
+];
+
+const expandedBibleQuotes = bibleQuotes.concat([
+  {
+    category: "Eternal Life",
+    source: "Bible (A) / Jn 8:51",
+    text: "I tell you the truth, if anyone keeps my word, he will never see death."
+  },
+  {
+    category: "Salvation",
+    source: "Bible (A) / Lk 2:30-32",
+    text: "For my eyes have seen your salvation, which you have prepared in the sight of all people, a light for revelation to the Gentiles."
+  },
+  {
+    category: "Eternal Life",
+    source: "Bible (A) / 1 Jn 2:15-17",
+    text: "Do not love the world or anything in the world. The world and its desires pass away, but the man who does the will of God lives forever."
+  },
+  {
+    category: "Love",
+    source: "Bible (A) / 1 Jn 3:14-15",
+    text: "We know that we have passed from death to life, because we love our brothers. Anyone who does not love remains in death."
+  },
+  {
+    category: "Eternal Life",
+    source: "Bible (A) / Jn 17:3",
+    text: "Now this is eternal life: that they may know you, the only true God, and Jesus Christ, whom you have sent."
+  },
+  {
+    category: "Salvation",
+    source: "Bible (A) / 2 Tim 3:15",
+    text: "The holy Scriptures are able to make you wise for salvation through faith in Christ Jesus."
+  },
+  {
+    category: "Judgment",
+    source: "Bible (A) / Prov 20:8",
+    text: "When a king sits on his throne to judge, he winnows out all evil with his eyes."
+  },
+  {
+    category: "Judgment",
+    source: "Bible (A) / Jn 5:22-23",
+    text: "The Father judges no one, but has entrusted all judgment to the Son, that all may honor the Son just as they honor the Father."
+  },
+  {
+    category: "Judgment",
+    source: "Bible (A) / Jn 12:47-48",
+    text: "I did not come to judge the world, but to save it. There is a judge for the one who rejects me and does not accept my words."
+  },
+  {
+    category: "Judgment",
+    source: "Bible (A) / Jas 4:12",
+    text: "There is only one Lawgiver and Judge, the one who is able to save and destroy."
+  },
+  {
+    category: "Judgment",
+    source: "Bible (A) / Heb 10:30-31",
+    text: "The Lord will judge his people. It is a dreadful thing to fall into the hands of the living God."
+  },
+  {
+    category: "Judgment",
+    source: "Bible (A) / 1 Pt 4:17",
+    text: "It is time for judgment to begin with the family of God."
+  },
+  {
+    category: "Judgment",
+    source: "Bible (A) / 2 Cor 5:10",
+    text: "We must all appear before the judgment seat of Christ, that each one may receive what is due him for the things done while in the body."
+  },
+  {
+    category: "Judgment",
+    source: "Bible (A) / Mt 7:1-2",
+    text: "Do not judge, or you too will be judged. For in the same way you judge others, you will be judged."
+  },
+  {
+    category: "Judgment",
+    source: "Bible (A) / Rom 14:12-13",
+    text: "Each of us will give an account of himself to God. Therefore let us stop passing judgment on one another."
+  },
+  {
+    category: "Faith",
+    source: "Bible (A) / Heb 11:1",
+    text: "Now faith is being sure of what we hope for and certain of what we do not see."
+  },
+  {
+    category: "Faith",
+    source: "Bible (A) / Heb 11:6",
+    text: "Without faith it is impossible to please God, because anyone who comes to him must believe that he exists."
+  },
+  {
+    category: "Faith",
+    source: "Bible (A) / Heb 10:38-39",
+    text: "My righteous one will live by faith. But we are not of those who shrink back and are destroyed, but of those who believe and are saved."
+  },
+  {
+    category: "Faith",
+    source: "Bible (A) / Jn 20:29",
+    text: "Because you have seen me, you have believed; blessed are those who have not seen and yet have believed."
+  },
+  {
+    category: "Faith",
+    source: "Bible (A) / Rom 4:20-21",
+    text: "He did not waver through unbelief regarding the promise of God, but was strengthened in his faith and gave glory to God."
+  },
+  {
+    category: "Faith",
+    source: "Bible (A) / Rom 10:17",
+    text: "Faith comes from hearing the message, and the message is heard through the word of Christ."
+  },
+  {
+    category: "Faith",
+    source: "Bible (A) / Mk 5:34-36",
+    text: "Daughter, your faith has healed you. Go in peace and be freed from your suffering. Do not be afraid; just believe."
+  },
+  {
+    category: "Faith",
+    source: "Bible (A) / 2 Cor 5:7",
+    text: "We live by faith, not by sight."
+  },
+  {
+    category: "Faith",
+    source: "Bible (A) / Mt 21:21-22",
+    text: "If you have faith and do not doubt, it will be done. If you believe, you will receive whatever you ask for in prayer."
+  },
+  {
+    category: "Faith",
+    source: "Bible (A) / 1 Pt 1:8-9",
+    text: "Though you have not seen him, you love him; and even though you do not see him now, you believe in him."
+  },
+  {
+    category: "Word",
+    source: "Bible (A) / Jn 1:1",
+    text: "In the beginning was the Word, and the Word was with God, and the Word was God."
+  },
+  {
+    category: "Word",
+    source: "Bible (A) / Heb 4:12",
+    text: "For the word of God is living and active. Sharper than any double-edged sword, it judges the thoughts and attitudes of the heart."
+  },
+  {
+    category: "Word",
+    source: "Bible (A) / 2 Tim 3:16-17",
+    text: "All Scripture is God-breathed and is useful for teaching, rebuking, correcting and training in righteousness."
+  },
+  {
+    category: "Word",
+    source: "Bible (A) / Jas 1:21",
+    text: "Humbly accept the word planted in you, which can save you."
+  },
+  {
+    category: "Word",
+    source: "Bible (A) / Isa 55:10-11",
+    text: "My word that goes out from my mouth will not return to me empty, but will accomplish what I desire."
+  },
+  {
+    category: "Word",
+    source: "Bible (A) / Psa 119:105",
+    text: "Your word is a lamp to my feet and a light for my path."
+  },
+  {
+    category: "Word",
+    source: "Bible (A) / Prov 30:5-6",
+    text: "Every word of God is flawless; he is a shield to those who take refuge in him. Do not add to his words."
+  },
+  {
+    category: "Word",
+    source: "Bible (A) / Dt 8:3",
+    text: "Man does not live on bread alone but on every word that comes from the mouth of the LORD."
+  },
+  {
+    category: "Word",
+    source: "Bible (A) / Dt 32:47",
+    text: "They are not just idle words for you; they are your life."
+  },
+  {
+    category: "Word",
+    source: "Bible (A) / Mk 13:31",
+    text: "Heaven and earth will pass away, but my words will never pass away."
+  },
+  {
+    category: "Word",
+    source: "Bible (A) / Jn 5:24",
+    text: "Whoever hears my word and believes him who sent me has eternal life and will not be condemned."
+  },
+  {
+    category: "Word",
+    source: "Bible (A) / Jn 8:31-32",
+    text: "If you hold to my teaching, you are really my disciples. Then you will know the truth, and the truth will set you free."
+  },
+  {
+    category: "Word",
+    source: "Bible (A) / Jn 17:17",
+    text: "Sanctify them by the truth; your word is truth."
+  },
+  {
+    category: "Grace",
+    source: "Bible (A) / Eph 2:4-9",
+    text: "Because of his great love for us, God, who is rich in mercy, made us alive with Christ. It is by grace you have been saved."
+  },
+  {
+    category: "Grace",
+    source: "Bible (A) / Rom 11:5-6",
+    text: "At the present time there is a remnant chosen by grace. And if by grace, then it is no longer by works."
+  },
+  {
+    category: "Grace",
+    source: "Bible (A) / Titus 2:11-14",
+    text: "The grace of God that brings salvation has appeared to all men. It teaches us to say no to ungodliness and worldly passions."
+  },
+  {
+    category: "Grace",
+    source: "Bible (A) / 1 Pt 5:12",
+    text: "This is the true grace of God. Stand fast in it."
+  }
+]);
+
+const completeBibleQuotes = expandedBibleQuotes.concat([
+  {
+    category: "Love",
+    source: "Bible (A) / Mt 22:36-40",
+    text: "Love the Lord your God with all your heart and with all your soul and with all your mind. Love your neighbor as yourself."
+  },
+  {
+    category: "Repentance",
+    source: "Bible (A) / Rom 2:4-6",
+    text: "God's kindness leads you toward repentance. Because of your stubbornness and your unrepentant heart, you are storing up wrath against yourself."
+  },
+  {
+    category: "Repentance",
+    source: "Bible (A) / Isa 30:15",
+    text: "In repentance and rest is your salvation, in quietness and trust is your strength."
+  },
+  {
+    category: "Repentance",
+    source: "Bible (A) / Hos 5:15",
+    text: "Then I will go back to my place until they admit their guilt. And they will seek my face; in their misery they will earnestly seek me."
+  },
+  {
+    category: "Repentance",
+    source: "Bible (A) / 2 Cor 7:10-11",
+    text: "Godly sorrow brings repentance that leads to salvation and leaves no regret, but worldly sorrow brings death."
+  },
+  {
+    category: "Repentance",
+    source: "Bible (A) / 2 Tim 2:24-26",
+    text: "Those who oppose him he must gently instruct, in the hope that God will grant them repentance leading them to a knowledge of the truth."
+  },
+  {
+    category: "Repentance",
+    source: "Bible (A) / Psa 32:5",
+    text: "Then I acknowledged my sin to you and did not cover up my iniquity. And you forgave the guilt of my sin."
+  },
+  {
+    category: "Repentance",
+    source: "Bible (A) / Psa 51:16-17",
+    text: "The sacrifices of God are a broken spirit; a broken and contrite heart, O God, you will not despise."
+  },
+  {
+    category: "Repentance",
+    source: "Bible (A) / Prov 28:13",
+    text: "He who conceals his sins does not prosper, but whoever confesses and renounces them finds mercy."
+  },
+  {
+    category: "Repentance",
+    source: "Bible (A) / Jer 15:19",
+    text: "If you repent, I will restore you that you may serve me; if you utter worthy, not worthless, words, you will be my spokesman."
+  },
+  {
+    category: "Repentance",
+    source: "Bible (A) / Eze 18:21-23",
+    text: "If a wicked man turns away from all the sins he has committed and keeps all my decrees, he will surely live; he will not die."
+  },
+  {
+    category: "Repentance",
+    source: "Bible (A) / Eze 18:30-31",
+    text: "Repent! Turn away from all your offenses; then sin will not be your downfall. Get a new heart and a new spirit."
+  },
+  {
+    category: "Repentance",
+    source: "Bible (A) / Joel 2:12-13",
+    text: "Return to me with all your heart, with fasting and weeping and mourning. Rend your heart and not your garments."
+  },
+  {
+    category: "Repentance",
+    source: "Bible (A) / Jonah 3:5-10",
+    text: "The Ninevites believed God. When God saw what they did and how they turned from their evil ways, he had compassion."
+  },
+  {
+    category: "Repentance",
+    source: "Bible (A) / Zech 1:3-4",
+    text: "Return to me, declares the LORD Almighty, and I will return to you. Turn from your evil ways and your evil practices."
+  },
+  {
+    category: "Repentance",
+    source: "Bible (A) / 2 Chron 7:14",
+    text: "If my people will humble themselves and pray and seek my face and turn from their wicked ways, then will I hear from heaven."
+  },
+  {
+    category: "Repentance",
+    source: "Bible (A) / Lk 15:7",
+    text: "There will be more rejoicing in heaven over one sinner who repents than over ninety-nine righteous persons who do not need to repent."
+  },
+  {
+    category: "Repentance",
+    source: "Bible (A) / Lk 13:3",
+    text: "Unless you repent, you too will all perish."
+  },
+  {
+    category: "Repentance",
+    source: "Bible (A) / Acts 3:19-21",
+    text: "Repent, then, and turn to God, so that your sins may be wiped out, that times of refreshing may come from the Lord."
+  },
+  {
+    category: "Repentance",
+    source: "Bible (A) / 2 Pt 3:8-9",
+    text: "The Lord is patient with you, not wanting anyone to perish, but everyone to come to repentance."
+  },
+  {
+    category: "Righteousness",
+    source: "Bible (A) / Dt 6:24-25",
+    text: "If we are careful to obey all this law before the LORD our God, as he has commanded us, that will be our righteousness."
+  },
+  {
+    category: "Righteousness",
+    source: "Bible (A) / Rom 2:13",
+    text: "It is not those who hear the law who are righteous in God's sight, but it is those who obey the law who will be declared righteous."
+  },
+  {
+    category: "Righteousness",
+    source: "Bible (A) / Rom 10:1-4",
+    text: "Since they did not know the righteousness that comes from God and sought to establish their own, they did not submit to God's righteousness."
+  },
+  {
+    category: "Righteousness",
+    source: "Bible (A) / Gn 15:6",
+    text: "Abram believed the LORD, and he credited it to him as righteousness."
+  },
+  {
+    category: "Righteousness",
+    source: "Bible (A) / Psa 15:1-5",
+    text: "He whose walk is blameless and who does what is righteous, who speaks the truth from his heart, will never be shaken."
+  },
+  {
+    category: "Righteousness",
+    source: "Bible (A) / Psa 34:15-20",
+    text: "The eyes of the LORD are on the righteous and his ears are attentive to their cry. A righteous man may have many troubles, but the LORD delivers him from them all."
+  },
+  {
+    category: "Righteousness",
+    source: "Bible (A) / Psa 37:28-31",
+    text: "The LORD loves the just and will not forsake his faithful ones. The law of his God is in his heart; his feet do not slip."
+  },
+  {
+    category: "Righteousness",
+    source: "Bible (A) / Psa 37:39-40",
+    text: "The salvation of the righteous comes from the LORD; he is their stronghold in time of trouble."
+  },
+  {
+    category: "Righteousness",
+    source: "Bible (A) / Prov 10:25",
+    text: "When the storm has swept by, the wicked are gone, but the righteous stand firm forever."
+  },
+  {
+    category: "Righteousness",
+    source: "Bible (A) / Prov 11:4-6",
+    text: "Wealth is worthless in the day of wrath, but righteousness delivers from death. The righteousness of the upright delivers them."
+  },
+  {
+    category: "Righteousness",
+    source: "Bible (A) / Prov 12:28",
+    text: "In the way of righteousness there is life; along that path is immortality."
+  },
+  {
+    category: "Righteousness",
+    source: "Bible (A) / Prov 21:21",
+    text: "He who pursues righteousness and love finds life, prosperity and honor."
+  },
+  {
+    category: "Righteousness",
+    source: "Bible (A) / Prov 28:1",
+    text: "The wicked man flees though no one pursues, but the righteous are as bold as a lion."
+  },
+  {
+    category: "Righteousness",
+    source: "Bible (A) / Psa 92:12-15",
+    text: "The righteous will flourish like a palm tree; they will still bear fruit in old age, they will stay fresh and green."
+  },
+  {
+    category: "Righteousness",
+    source: "Bible (A) / Zeph 2:3",
+    text: "Seek the LORD, all you humble of the land, you who do what he commands. Seek righteousness, seek humility."
+  },
+  {
+    category: "Righteousness",
+    source: "Bible (A) / 1 Tim 6:11-12",
+    text: "Flee from all this, and pursue righteousness, godliness, faith, love, endurance and gentleness. Fight the good fight of the faith."
+  },
+  {
+    category: "Righteousness",
+    source: "Bible (A) / Eph 5:8-10",
+    text: "Live as children of light, for the fruit of the light consists in all goodness, righteousness and truth."
+  },
+  {
+    category: "Righteousness",
+    source: "Bible (A) / Heb 12:10-11",
+    text: "God disciplines us for our good, that we may share in his holiness. Later on, it produces a harvest of righteousness and peace."
+  },
+  {
+    category: "Righteousness",
+    source: "Bible (A) / Jas 2:21-24",
+    text: "His faith and his actions were working together, and his faith was made complete by what he did."
+  },
+  {
+    category: "Seeking God",
+    source: "Bible (A) / Psa 24:3-6",
+    text: "Who may ascend the hill of the LORD? He who has clean hands and a pure heart. Such is the generation of those who seek him."
+  },
+  {
+    category: "Seeking God",
+    source: "Bible (A) / Jer 33:3",
+    text: "Call to me and I will answer you and tell you great and unsearchable things you do not know."
+  },
+  {
+    category: "Seeking God",
+    source: "Bible (A) / Prov 28:5",
+    text: "Evil men do not understand justice, but those who seek the LORD understand it fully."
+  },
+  {
+    category: "Seeking God",
+    source: "Bible (A) / Lam 3:24-26",
+    text: "The LORD is good to those whose hope is in him, to the one who seeks him."
+  },
+  {
+    category: "Seeking God",
+    source: "Bible (A) / Psa 34:4-6",
+    text: "I sought the LORD, and he answered me; he delivered me from all my fears."
+  },
+  {
+    category: "Seeking God",
+    source: "Bible (A) / Psa 145:18",
+    text: "The LORD is near to all who call on him, to all who call on him in truth."
+  },
+  {
+    category: "Seeking God",
+    source: "Bible (A) / 1 Chron 28:9",
+    text: "If you seek him, he will be found by you; but if you forsake him, he will reject you forever."
+  },
+  {
+    category: "Seeking God",
+    source: "Bible (A) / Mt 6:33",
+    text: "Seek first his kingdom and his righteousness, and all these things will be given to you as well."
+  },
+  {
+    category: "Seeking God",
+    source: "Bible (A) / Lk 11:9-10",
+    text: "Ask and it will be given to you; seek and you will find; knock and the door will be opened to you."
+  },
+  {
+    category: "Seeking God",
+    source: "Bible (A) / Lk 12:29-31",
+    text: "Do not set your heart on what you will eat or drink; do not worry about it. But seek his kingdom, and these things will be given to you as well."
+  },
+  {
+    category: "Understanding",
+    source: "Bible (A) / Mt 16:16-17",
+    text: "You are the Christ, the Son of the living God. This was not revealed to you by man, but by my Father in heaven."
+  },
+  {
+    category: "Understanding",
+    source: "Bible (A) / Mk 8:17-21",
+    text: "Do you still not see or understand? Are your hearts hardened? Do you have eyes but fail to see, and ears but fail to hear?"
+  },
+  {
+    category: "Understanding",
+    source: "Bible (A) / Lk 24:30-32",
+    text: "Then their eyes were opened and they recognized him. Were not our hearts burning within us while he opened the Scriptures to us?"
+  },
+  {
+    category: "Understanding",
+    source: "Bible (A) / Dt 29:2-4",
+    text: "With your own eyes you saw those great trials, those miraculous signs and great wonders. But to this day the LORD has not given you a mind that understands."
+  },
+  {
+    category: "Understanding",
+    source: "Bible (A) / Dn 12:9-10",
+    text: "The words are closed up and sealed until the time of the end. None of the wicked will understand, but those who are wise will understand."
+  },
+  {
+    category: "Understanding",
+    source: "Bible (A) / Eph 4:14-18",
+    text: "They are darkened in their understanding and separated from the life of God because of the ignorance that is in them."
+  },
+  {
+    category: "Understanding",
+    source: "Bible (A) / Hos 4:6",
+    text: "My people are destroyed from lack of knowledge. Because you have rejected knowledge, I also reject you as my priests."
+  },
+  {
+    category: "Understanding",
+    source: "Bible (A) / Isa 5:13",
+    text: "Therefore my people will go into exile for lack of understanding."
+  },
+  {
+    category: "Understanding",
+    source: "Bible (A) / Mt 22:29",
+    text: "You are in error because you do not know the Scriptures or the power of God."
+  },
+  {
+    category: "Understanding",
+    source: "Bible (A) / Lk 19:41-44",
+    text: "If you had only known on this day what would bring you peace, but now it is hidden from your eyes."
+  },
+  {
+    category: "Baptism",
+    source: "Bible (A) / Mt 3:11-12",
+    text: "I baptize you with water for repentance. But after me will come one who is more powerful than I. He will baptize you with the Holy Spirit and with fire."
+  },
+  {
+    category: "Baptism",
+    source: "Bible (A) / 1 Pt 3:18-22",
+    text: "This water symbolizes baptism that now saves you also, not the removal of dirt from the body but the pledge of a good conscience toward God."
+  },
+  {
+    category: "Beatitudes",
+    source: "Bible (A) / Mt 5:3-12",
+    text: "Blessed are the poor in spirit, for theirs is the kingdom of heaven. Blessed are the pure in heart, for they will see God."
+  },
+  {
+    category: "Beatitudes",
+    source: "Bible (A) / Mt 5:6-10",
+    text: "Blessed are those who hunger and thirst for righteousness, for they will be filled. Blessed are the peacemakers, for they will be called sons of God."
+  }
+]);
+
+function quoteKey(quote) {
+  return `${quote.category}:${quote.source}:${quote.text}`;
+}
+
+function sentencePieces(text) {
+  const normalized = text.replace(/\s+/g, " ").trim();
+  return (normalized.match(/[^.!?。]+[.!?。]?/g) || [normalized])
+    .map((part) => part.trim())
+    .filter((part) => part.length >= 28 && part.length <= 240);
+}
+
+function buildLargeQuotePool(items) {
+  const seen = new Set(items.map(quoteKey));
+  const excerpts = [];
+
+  items.forEach((quote) => {
+    const sentences = sentencePieces(quote.text);
+
+    sentences.forEach((sentence, index) => {
+      const excerpt = {
+        category: quote.category,
+        source: `${quote.source} / excerpt ${index + 1}`,
+        text: sentence
+      };
+      const key = quoteKey(excerpt);
+
+      if (!seen.has(key)) {
+        seen.add(key);
+        excerpts.push(excerpt);
+      }
+    });
+
+    for (let index = 0; index < sentences.length - 1; index += 1) {
+      const combined = `${sentences[index]} ${sentences[index + 1]}`;
+
+      if (combined.length >= 80 && combined.length <= 280) {
+        const excerpt = {
+          category: quote.category,
+          source: `${quote.source} / excerpt ${index + 1}-${index + 2}`,
+          text: combined
+        };
+        const key = quoteKey(excerpt);
+
+        if (!seen.has(key)) {
+          seen.add(key);
+          excerpts.push(excerpt);
+        }
+      }
+    }
+  });
+
+  return items.concat(excerpts);
+}
+
+const jssQuoteLibrary = buildLargeQuotePool(expandedJssQuotes);
+const heavenlyYeastQuoteLibrary = buildLargeQuotePool(expandedHeavenlyYeastQuotes);
+const bibleQuoteLibrary = buildLargeQuotePool(completeBibleQuotes);
+
+function cleanSourceTopic(source) {
+  return source
+    .replace(/ \/ excerpt .+$/, "")
+    .replace(/^Heavenly Yeast \/ /, "")
+    .replace(/^Bible \(A\) \/ /, "")
+    .replace(/^JSS Category$/, "JSS")
+    .trim();
+}
+
+function jssTheme(quote) {
+  const rules = [
+    ["새 언약", "New Covenant"],
+    ["계시록", "Revelation"],
+    ["12지파", "12 Tribes"],
+    ["추수", "Harvest"],
+    ["인치", "Sealing"],
+    ["천국", "Heaven"],
+    ["영생", "Eternal Life"],
+    ["구원", "Salvation"],
+    ["예수님의 피", "Jesus' Blood"],
+    ["피", "Blood"],
+    ["예수님", "Jesus"],
+    ["말씀", "Word"],
+    ["진리", "Truth"],
+    ["거짓", "Lies"],
+    ["마귀", "Devil"],
+    ["전쟁", "War"],
+    ["이긴", "Victory"],
+    ["회개", "Repentance"],
+    ["약속의 목자", "Promised Pastor"],
+    ["새요한", "New John"],
+    ["씨", "Seed"],
+    ["빛", "Light"],
+    ["생명", "Life"],
+    ["재창조", "Recreation"],
+    ["창조", "Creation"],
+    ["심판", "Judgment"],
+    ["신천지", "SCJ"],
+    ["하나님", "God"]
+  ];
+  const match = rules.find(([keyword]) => quote.text.includes(keyword));
+
+  return match ? match[1] : cleanSourceTopic(quote.source);
+}
+
+function bibleBook(quote) {
+  return cleanSourceTopic(quote.source).replace(/\s+\d.*$/, "");
+}
+
+function heavenlyYeastTopic(quote) {
+  const sourceTopic = cleanSourceTopic(quote.source);
+  const sourceRules = [
+    ["Worry, God will provide", "Provision"],
+    ["Know yourself", "Know Yourself"],
+    ["Important test question", "Faith Test"],
+    ["Voyager Sailing Towards Heaven", "Voyager"],
+    ["How can we do the will of God?", "God's Will"],
+    ["How can we receive help from God?", "God's Help"],
+    ["How to greet God", "Greet God"],
+    ["Who has right to be God's child?", "God's Child"],
+    ["What does it mean to go to our hometown?", "Hometown"],
+    ["Is heaven and eternal life freely given?", "Eternal Life"],
+    ["Thinking that no one will see", "Integrity"],
+    ["Hating God, God hating", "Worldliness"],
+    ["How not to get thrown out by God", "Staying in Word"],
+    ["What does it mean to wash our robes?", "Washing Robes"],
+    ["Why should the world know God?", "Know God"],
+    ["Mindset of an appointed worker", "Appointed Worker"],
+    ["What doing whatever you want means", "God's Will"],
+    ["Highlights", "Highlights"],
+    ["Important", "Important"]
+  ];
+  const sourceMatch = sourceRules.find(([source]) => sourceTopic === source);
+
+  return sourceMatch ? sourceMatch[1] : sourceTopic;
+}
+
+function heavenlyYeastTheme(quote) {
+  const text = quote.text.toLocaleLowerCase();
+  const rules = [
+    ["기도", "Prayer"],
+    ["pray", "Prayer"],
+    ["heaven", "Heaven"],
+    ["천국", "Heaven"],
+    ["eternal", "Eternal Life"],
+    ["영생", "Eternal Life"],
+    ["word", "Word"],
+    ["말씀", "Word"],
+    ["faith", "Faith"],
+    ["믿", "Faith"],
+    ["heart", "Heart"],
+    ["마음", "Heart"],
+    ["god", "God"],
+    ["하나님", "God"],
+    ["lord", "Lord"],
+    ["예수", "Jesus"],
+    ["truth", "Truth"],
+    ["진리", "Truth"],
+    ["world", "World"],
+    ["세상", "World"],
+    ["duty", "Duty"],
+    ["사명", "Mission"],
+    ["public", "Public Mind"],
+    ["love", "Love"],
+    ["사랑", "Love"],
+    ["sin", "Sin"],
+    ["죄", "Sin"],
+    ["wisdom", "Wisdom"],
+    ["지혜", "Wisdom"],
+    ["create", "Creation"],
+    ["창조", "Creation"]
+  ];
+  const match = rules.find(([keyword]) => text.includes(keyword));
+
+  return match ? match[1] : quote.category;
+}
+
+function withDetailedCategories(items, collectionKey) {
+  return items.map((quote) => {
+    if (collectionKey === "jss") {
+      return {
+        ...quote,
+        category: `${quote.category} / ${jssTheme(quote)}`
+      };
+    }
+
+    if (collectionKey === "heavenlyYeast") {
+      return {
+        ...quote,
+        category: `${heavenlyYeastTopic(quote)} / ${heavenlyYeastTheme(quote)}`
+      };
+    }
+
+    return {
+      ...quote,
+      category: `${quote.category} / ${bibleBook(quote)}`
+    };
+  });
+}
+
+const categorizedJssQuoteLibrary = withDetailedCategories(jssQuoteLibrary, "jss");
+const categorizedHeavenlyYeastQuoteLibrary = withDetailedCategories(heavenlyYeastQuoteLibrary, "heavenlyYeast");
+const categorizedBibleQuoteLibrary = withDetailedCategories(bibleQuoteLibrary, "bible");
+
 const collections = {
   jss: {
     copyLabel: "JSS Quotes",
     issueTitle: "Random JSS Quotes",
     sourceTitle: "JSS dashboard sources",
-    storageKey: "jss-dispatch-shown-quotes-v5",
-    quotes: expandedJssQuotes
+    storageKey: "jss-dispatch-shown-quotes-v6",
+    sourceStorageKey: "jss-dispatch-shown-sources-v1",
+    quotes: categorizedJssQuoteLibrary
   },
   heavenlyYeast: {
     copyLabel: "Heavenly Yeast Quotes",
     issueTitle: "Random Heavenly Yeast Quotes",
     sourceTitle: "Heavenly Yeast dashboard sources",
-    storageKey: "heavenly-yeast-shown-quotes-v3",
-    quotes: expandedHeavenlyYeastQuotes
+    storageKey: "heavenly-yeast-shown-quotes-v4",
+    sourceStorageKey: "heavenly-yeast-shown-sources-v1",
+    quotes: categorizedHeavenlyYeastQuoteLibrary
+  },
+  bible: {
+    copyLabel: "Bible Quotes",
+    issueTitle: "Random Bible Quotes",
+    sourceTitle: "Bible (A) dashboard sources",
+    storageKey: "bible-quotes-shown-v2",
+    sourceStorageKey: "bible-quotes-shown-sources-v1",
+    quotes: categorizedBibleQuoteLibrary
   }
 };
 
@@ -1256,6 +2247,8 @@ const quoteGrid = document.querySelector("#quoteGrid");
 const template = document.querySelector("#quoteTemplate");
 const categoryPills = document.querySelector("#categoryPills");
 const categoryCount = document.querySelector("#categoryCount");
+const categoryStrip = document.querySelector("#categoryStrip");
+const categoryToggle = document.querySelector("#categoryToggle");
 const issueDate = document.querySelector("#issueDate");
 const generateBtn = document.querySelector("#generateBtn");
 const shuffleTop = document.querySelector("#shuffleTop");
@@ -1282,6 +2275,7 @@ const savedQuotesStorageKey = "words-of-the-day-saved-quotes-v1";
 
 let activeCollectionKey = "jss";
 let activeView = "quotes";
+let categoriesExpanded = false;
 
 function activeCollection() {
   return collections[activeCollectionKey];
@@ -1294,10 +2288,19 @@ function uniqueCategories(items = activeCollection().quotes) {
 function pickIssue() {
   const collection = activeCollection();
   let shownIds = getShownQuoteIds(collection.storageKey);
-  let availableQuotes = collection.quotes.filter((quote) => !shownIds.includes(quoteId(quote)));
+  let shownSources = getShownQuoteIds(collection.sourceStorageKey);
+  let availableQuotes = collection.quotes.filter(
+    (quote) => !shownIds.includes(quoteId(quote)) && !shownSources.includes(baseSourceId(quote))
+  );
+
+  if (uniqueCategoryCount(availableQuotes) < 5) {
+    shownSources = [];
+    availableQuotes = collection.quotes.filter((quote) => !shownIds.includes(quoteId(quote)));
+  }
 
   if (uniqueCategoryCount(availableQuotes) < 5) {
     shownIds = [];
+    shownSources = [];
     availableQuotes = [...collection.quotes];
   }
 
@@ -1310,6 +2313,7 @@ function pickIssue() {
   });
 
   saveShownQuoteIds(collection.storageKey, [...shownIds, ...selected.map(quoteId)]);
+  saveShownQuoteIds(collection.sourceStorageKey, [...shownSources, ...selected.map(baseSourceId)]);
   return selected;
 }
 
@@ -1318,7 +2322,11 @@ function shuffle(items) {
 }
 
 function quoteId(quote) {
-  return `${quote.category}:${quote.source}:${quote.text}`;
+  return quoteKey(quote);
+}
+
+function baseSourceId(quote) {
+  return quote.source.replace(/ \/ excerpt .+$/, "");
 }
 
 function getShownQuoteIds(storageKey) {
@@ -1565,6 +2573,11 @@ function renderSearchResults(query) {
 function renderCategories() {
   const categories = uniqueCategories();
   categoryCount.textContent = `${categories.length} categories`;
+  categoryToggle.textContent = categoriesExpanded
+    ? "Hide categories"
+    : `Show ${categories.length} categories`;
+  categoryToggle.setAttribute("aria-expanded", String(categoriesExpanded));
+  categoryStrip.classList.toggle("is-collapsed", !categoriesExpanded);
   categoryPills.replaceChildren(
     ...categories.map((category) => {
       const pill = document.createElement("span");
@@ -1625,6 +2638,7 @@ function switchCollection(collectionKey) {
   }
 
   activeCollectionKey = collectionKey;
+  categoriesExpanded = false;
   renderCollectionFrame();
 }
 
@@ -1689,6 +2703,10 @@ clearSearchBtn.addEventListener("click", () => {
 quotesViewBtn.addEventListener("click", () => switchView("quotes"));
 searchViewBtn.addEventListener("click", () => switchView("search"));
 savedViewBtn.addEventListener("click", () => switchView("saved"));
+categoryToggle.addEventListener("click", () => {
+  categoriesExpanded = !categoriesExpanded;
+  renderCategories();
+});
 tabButtons.forEach((button) => {
   button.addEventListener("click", () => switchCollection(button.dataset.collection));
 });
@@ -1696,6 +2714,7 @@ tabButtons.forEach((button) => {
 window.resetQuoteHistory = () => {
   const collection = activeCollection();
   saveShownQuoteIds(collection.storageKey, []);
+  saveShownQuoteIds(collection.sourceStorageKey, []);
   refreshIssue();
 };
 
