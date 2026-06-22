@@ -47,7 +47,7 @@ const quotes = [
   {
     category: "Word, Life, Light",
     source: "Word, Life, Light, God",
-    text: "사람이 하나님께로 돌아오지 않는 것은 의와 영생과 천국과 하나님을 버리거나 싫어해서가 아니다. 죄가 그 마음의 눈을 가리어 하나님의 뜻을 알지 못하기 때문이다. 태초의 말씀이 곧 하나님이시라. 생명과 빛인 이 말씀을 마음에 기록함으로 마음이 밝아지면 자기가 해야 할 처신을 할 것이다."
+    text: "만일 해도 물도 없어지면, 사람도 만물도 존재하지 못할 것이다. 창조주께서 이것들(자연계)을 파괴하시지 않는 것은, 사람이 자기 죄를 깨닫고 회개하여 하나님께로 돌아오는 것을 기다리시기 때문이다. 사람이 하나님께로 돌아오지 않는 것은 의와 영생과 천국과 하나님을 버리거나 싫어해서가 아니다. 죄가 그 마음의 눈을 가리어 하나님의 뜻을 알지 못하기 때문이다. 그 마음에 빛이 없어지고 어두움이 짙어져 알지 못함이라."
   },
   {
     category: "12 Tribes",
@@ -2036,7 +2036,8 @@ function buildLargeQuotePool(items) {
       const excerpt = {
         category: quote.category,
         source: `${quote.source} / excerpt ${index + 1}`,
-        text: sentence
+        text: sentence,
+        fullText: quote.text
       };
       const key = quoteKey(excerpt);
 
@@ -2053,7 +2054,8 @@ function buildLargeQuotePool(items) {
         const excerpt = {
           category: quote.category,
           source: `${quote.source} / excerpt ${index + 1}-${index + 2}`,
-          text: combined
+          text: combined,
+          fullText: quote.text
         };
         const key = quoteKey(excerpt);
 
@@ -2322,11 +2324,15 @@ function shuffle(items) {
 }
 
 function quoteId(quote) {
-  return quoteKey(quote);
+  return `${quote.category}:${baseSourceId(quote)}:${displayQuoteText(quote)}`;
 }
 
 function baseSourceId(quote) {
   return quote.source.replace(/ \/ excerpt .+$/, "");
+}
+
+function displayQuoteText(quote) {
+  return quote.fullText || quote.text;
 }
 
 function bibleReference(quote) {
@@ -2336,7 +2342,8 @@ function bibleReference(quote) {
 
 function quoteTextWithReference(quote) {
   const reference = bibleReference(quote);
-  return reference ? `${quote.text} ${reference}` : quote.text;
+  const text = displayQuoteText(quote);
+  return reference ? `${text} ${reference}` : text;
 }
 
 function getShownQuoteIds(storageKey) {
@@ -2381,7 +2388,7 @@ function toggleSavedQuote(quote, collectionLabel = activeCollection().copyLabel)
       collection: collectionLabel,
       category: quote.category,
       source: quote.source,
-      text: quote.text,
+      text: displayQuoteText(quote),
       savedAt: new Date().toISOString()
     });
   }
@@ -2406,7 +2413,7 @@ function renderQuotes(selectedQuotes) {
     const reference = bibleReference(quote);
     card.querySelector(".category").textContent = quote.category;
     card.querySelector(".source").textContent = quote.source;
-    blockquote.textContent = quote.text;
+    blockquote.textContent = displayQuoteText(quote);
     if (reference) {
       const cite = document.createElement("cite");
       cite.className = "bible-reference";
@@ -2481,7 +2488,7 @@ function quoteMatchesSearch(quote, query) {
   const normalizedQuery = normalizeSearchText(query);
   const terms = normalizedQuery.split(" ").filter(Boolean);
   const searchable = normalizeSearchText(
-    `${quote.collectionLabel} ${quote.category} ${quote.source} ${quote.text}`
+    `${quote.collectionLabel} ${quote.category} ${quote.source} ${displayQuoteText(quote)}`
   );
 
   return searchable.includes(normalizedQuery) || terms.every((term) => searchable.includes(term));
