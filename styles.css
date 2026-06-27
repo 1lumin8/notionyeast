@@ -331,8 +331,12 @@ main {
   display: none;
 }
 
-.save-quote {
+.copy-quote {
   margin-left: auto;
+}
+
+.save-quote,
+.copy-quote {
   border: 1px solid rgba(47, 97, 86, 0.22);
   border-radius: 999px;
   background: rgba(244, 239, 229, 0.76);
@@ -343,9 +347,17 @@ main {
   padding: 7px 10px;
 }
 
+.save-quote {
+  margin-left: 0;
+}
+
 .save-quote.saved {
   background: var(--accent-dark);
   color: #fff;
+}
+
+.copy-quote.copied {
+  background: rgba(47, 97, 86, 0.12);
 }
 
 blockquote {

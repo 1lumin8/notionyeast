@@ -2409,6 +2409,7 @@ function renderQuotes(selectedQuotes) {
   selectedQuotes.forEach((quote) => {
     const card = template.content.cloneNode(true);
     const saveButton = card.querySelector(".save-quote");
+    const copyQuoteButton = card.querySelector(".copy-quote");
     const blockquote = card.querySelector("blockquote");
     const reference = bibleReference(quote);
     card.querySelector(".category").textContent = quote.category;
@@ -2424,6 +2425,9 @@ function renderQuotes(selectedQuotes) {
     saveButton.classList.toggle("saved", isQuoteSaved(quote));
     saveButton.setAttribute("aria-label", `${saveButton.textContent} quote`);
     saveButton.addEventListener("click", () => toggleSavedQuote(quote));
+    copyQuoteButton.addEventListener("click", () =>
+      copyQuote(quote, copyQuoteButton, activeCollection().copyLabel)
+    );
     quoteGrid.appendChild(card);
   });
 }
@@ -2673,6 +2677,35 @@ async function copyIssue() {
     .map((quote, index) => `${index + 1}. [${quote.category}] ${quoteTextWithReference(quote)}\nSource: ${quote.source}`)
     .join("\n\n");
 
+  await copyText(text);
+  copyBtn.textContent = "Copied";
+  setTimeout(() => {
+    copyBtn.textContent = "Copy issue";
+  }, 1400);
+}
+
+async function copyQuote(quote, button, collectionLabel) {
+  const reference = bibleReference(quote);
+  const lines = [displayQuoteText(quote)];
+
+  if (reference) {
+    lines.push(reference);
+  }
+
+  if (collectionLabel !== "Bible Quotes") {
+    lines.push(collectionLabel);
+  }
+
+  await copyText(lines.join("\n"));
+  button.textContent = "Copied";
+  button.classList.add("copied");
+  setTimeout(() => {
+    button.textContent = "Copy";
+    button.classList.remove("copied");
+  }, 1200);
+}
+
+async function copyText(text) {
   try {
     if (!navigator.clipboard) {
       throw new Error("Clipboard API unavailable");
@@ -2688,11 +2721,6 @@ async function copyIssue() {
     document.execCommand("copy");
     textArea.remove();
   }
-
-  copyBtn.textContent = "Copied";
-  setTimeout(() => {
-    copyBtn.textContent = "Copy issue";
-  }, 1400);
 }
 
 function init() {
