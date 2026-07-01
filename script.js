@@ -2307,11 +2307,40 @@ function pickIssue() {
   }
 
   const selected = [];
+  const selectedSources = new Set();
+  const selectedVisibleQuotes = new Set();
   const categoryPool = shuffle(uniqueCategories(availableQuotes));
 
-  categoryPool.slice(0, 5).forEach((category) => {
-    const options = availableQuotes.filter((quote) => quote.category === category);
-    selected.push(shuffle(options)[0]);
+  categoryPool.forEach((category) => {
+    if (selected.length >= 5) {
+      return;
+    }
+
+    const options = availableQuotes.filter(
+      (quote) =>
+        quote.category === category &&
+        !selectedSources.has(baseSourceId(quote)) &&
+        !selectedVisibleQuotes.has(visibleQuoteKey(quote))
+    );
+    const choice = shuffle(options)[0];
+
+    if (choice) {
+      selected.push(choice);
+      selectedSources.add(baseSourceId(choice));
+      selectedVisibleQuotes.add(visibleQuoteKey(choice));
+    }
+  });
+
+  shuffle(availableQuotes).forEach((quote) => {
+    if (
+      selected.length < 5 &&
+      !selectedSources.has(baseSourceId(quote)) &&
+      !selectedVisibleQuotes.has(visibleQuoteKey(quote))
+    ) {
+      selected.push(quote);
+      selectedSources.add(baseSourceId(quote));
+      selectedVisibleQuotes.add(visibleQuoteKey(quote));
+    }
   });
 
   saveShownQuoteIds(collection.storageKey, [...shownIds, ...selected.map(quoteId)]);
@@ -2324,7 +2353,7 @@ function shuffle(items) {
 }
 
 function quoteId(quote) {
-  return `${quote.category}:${baseSourceId(quote)}:${displayQuoteText(quote)}`;
+  return `${baseSourceId(quote)}:${visibleQuoteKey(quote)}`;
 }
 
 function baseSourceId(quote) {
@@ -2333,6 +2362,10 @@ function baseSourceId(quote) {
 
 function displayQuoteText(quote) {
   return quote.fullText || quote.text;
+}
+
+function visibleQuoteKey(quote) {
+  return `${displayQuoteText(quote)}:${bibleReference(quote)}`.replace(/\s+/g, " ").trim();
 }
 
 function bibleReference(quote) {
