@@ -2292,7 +2292,7 @@ function pickIssue() {
   let shownIds = getShownQuoteIds(collection.storageKey);
   let shownSources = getShownQuoteIds(collection.sourceStorageKey);
   let availableQuotes = collection.quotes.filter(
-    (quote) => !shownIds.includes(quoteId(quote)) && !shownSources.includes(baseSourceId(quote))
+    (quote) => !shownIds.includes(quoteId(quote)) && !shownSources.includes(sourceUnitId(quote))
   );
 
   if (uniqueCategoryCount(availableQuotes) < 5) {
@@ -2319,14 +2319,14 @@ function pickIssue() {
     const options = availableQuotes.filter(
       (quote) =>
         quote.category === category &&
-        !selectedSources.has(baseSourceId(quote)) &&
+        !selectedSources.has(sourceUnitId(quote)) &&
         !selectedVisibleQuotes.has(visibleQuoteKey(quote))
     );
     const choice = shuffle(options)[0];
 
     if (choice) {
       selected.push(choice);
-      selectedSources.add(baseSourceId(choice));
+      selectedSources.add(sourceUnitId(choice));
       selectedVisibleQuotes.add(visibleQuoteKey(choice));
     }
   });
@@ -2334,17 +2334,37 @@ function pickIssue() {
   shuffle(availableQuotes).forEach((quote) => {
     if (
       selected.length < 5 &&
-      !selectedSources.has(baseSourceId(quote)) &&
+      !selectedSources.has(sourceUnitId(quote)) &&
       !selectedVisibleQuotes.has(visibleQuoteKey(quote))
     ) {
       selected.push(quote);
-      selectedSources.add(baseSourceId(quote));
+      selectedSources.add(sourceUnitId(quote));
       selectedVisibleQuotes.add(visibleQuoteKey(quote));
     }
   });
 
+  shuffle(availableQuotes).forEach((quote) => {
+    if (selected.length < 5 && !selectedVisibleQuotes.has(visibleQuoteKey(quote))) {
+      selected.push(quote);
+      selectedSources.add(sourceUnitId(quote));
+      selectedVisibleQuotes.add(visibleQuoteKey(quote));
+    }
+  });
+
+  if (selected.length < 5) {
+    shownIds = [];
+    shownSources = [];
+    shuffle(collection.quotes).forEach((quote) => {
+      if (selected.length < 5 && !selectedVisibleQuotes.has(visibleQuoteKey(quote))) {
+        selected.push(quote);
+        selectedSources.add(sourceUnitId(quote));
+        selectedVisibleQuotes.add(visibleQuoteKey(quote));
+      }
+    });
+  }
+
   saveShownQuoteIds(collection.storageKey, [...shownIds, ...selected.map(quoteId)]);
-  saveShownQuoteIds(collection.sourceStorageKey, [...shownSources, ...selected.map(baseSourceId)]);
+  saveShownQuoteIds(collection.sourceStorageKey, [...shownSources, ...selected.map(sourceUnitId)]);
   return selected;
 }
 
@@ -2358,6 +2378,10 @@ function quoteId(quote) {
 
 function baseSourceId(quote) {
   return quote.source.replace(/ \/ excerpt .+$/, "");
+}
+
+function sourceUnitId(quote) {
+  return `${baseSourceId(quote)}:${visibleQuoteKey(quote)}`;
 }
 
 function displayQuoteText(quote) {
