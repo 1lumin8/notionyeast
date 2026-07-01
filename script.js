@@ -2294,29 +2294,32 @@ function pickIssue() {
   let availableQuotes = collection.quotes.filter(
     (quote) => !shownIds.includes(quoteId(quote)) && !shownSources.includes(sourceUnitId(quote))
   );
+  let drawQuotes = uniqueDrawOptions(availableQuotes);
 
-  if (uniqueCategoryCount(availableQuotes) < 5) {
+  if (uniqueCategoryCount(drawQuotes) < 5) {
     shownSources = [];
     availableQuotes = collection.quotes.filter((quote) => !shownIds.includes(quoteId(quote)));
+    drawQuotes = uniqueDrawOptions(availableQuotes);
   }
 
-  if (uniqueCategoryCount(availableQuotes) < 5) {
+  if (uniqueCategoryCount(drawQuotes) < 5) {
     shownIds = [];
     shownSources = [];
     availableQuotes = [...collection.quotes];
+    drawQuotes = uniqueDrawOptions(availableQuotes);
   }
 
   const selected = [];
   const selectedSources = new Set();
   const selectedVisibleQuotes = new Set();
-  const categoryPool = shuffle(uniqueCategories(availableQuotes));
+  const categoryPool = shuffle(uniqueCategories(drawQuotes));
 
   categoryPool.forEach((category) => {
     if (selected.length >= 5) {
       return;
     }
 
-    const options = availableQuotes.filter(
+    const options = drawQuotes.filter(
       (quote) =>
         quote.category === category &&
         !selectedSources.has(sourceUnitId(quote)) &&
@@ -2331,7 +2334,7 @@ function pickIssue() {
     }
   });
 
-  shuffle(availableQuotes).forEach((quote) => {
+  shuffle(drawQuotes).forEach((quote) => {
     if (
       selected.length < 5 &&
       !selectedSources.has(sourceUnitId(quote)) &&
@@ -2343,7 +2346,7 @@ function pickIssue() {
     }
   });
 
-  shuffle(availableQuotes).forEach((quote) => {
+  shuffle(drawQuotes).forEach((quote) => {
     if (selected.length < 5 && !selectedVisibleQuotes.has(visibleQuoteKey(quote))) {
       selected.push(quote);
       selectedSources.add(sourceUnitId(quote));
@@ -2354,7 +2357,7 @@ function pickIssue() {
   if (selected.length < 5) {
     shownIds = [];
     shownSources = [];
-    shuffle(collection.quotes).forEach((quote) => {
+    shuffle(uniqueDrawOptions(collection.quotes)).forEach((quote) => {
       if (selected.length < 5 && !selectedVisibleQuotes.has(visibleQuoteKey(quote))) {
         selected.push(quote);
         selectedSources.add(sourceUnitId(quote));
@@ -2366,6 +2369,20 @@ function pickIssue() {
   saveShownQuoteIds(collection.storageKey, [...shownIds, ...selected.map(quoteId)]);
   saveShownQuoteIds(collection.sourceStorageKey, [...shownSources, ...selected.map(sourceUnitId)]);
   return selected;
+}
+
+function uniqueDrawOptions(items) {
+  const grouped = new Map();
+
+  shuffle(items).forEach((quote) => {
+    const key = sourceUnitId(quote);
+
+    if (!grouped.has(key)) {
+      grouped.set(key, quote);
+    }
+  });
+
+  return [...grouped.values()];
 }
 
 function shuffle(items) {
